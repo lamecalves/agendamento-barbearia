@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Barbearia · Agendamentos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <span class="logo">Barbearia</span>
+  <div id="userbox" class="hidden"><span id="username" class="muted"></span> <button class="link" id="logout">Sair</button></div>
+</header>
+<main>
+  <!-- LOGIN / CADASTRO -->
+  <section id="auth" class="card" style="max-width:420px;margin:40px auto">
+    <h2 id="auth-title">Entrar</h2>
+    <form id="auth-form">
+      <div id="reg-fields" class="hidden">
+        <label class="muted">Nome</label><input id="f-name">
+        <label class="muted">Telefone</label><input id="f-phone" placeholder="(83) 90000-0000">
+      </div>
+      <label class="muted">E-mail</label><input id="f-email" type="email" required>
+      <label class="muted">Senha</label><input id="f-pass" type="password" required minlength="6">
+      <button class="primary" style="width:100%">Continuar</button>
+    </form>
+    <p class="muted" style="margin-top:14px"><button class="link" id="switch">Criar conta</button></p>
+  </section>
+
+  <!-- CLIENTE -->
+  <section id="client" class="hidden">
+    <div class="grid">
+      <div class="card">
+        <h2 id="book-title">Novo agendamento</h2>
+        <label class="muted">Serviço</label><select id="service"></select>
+        <label class="muted">Profissional</label><select id="barber"></select>
+        <div class="cal-head"><button id="prev">‹</button><strong id="cal-title"></strong><button id="next">›</button></div>
+        <div id="cal-grid"></div>
+        <div id="slots"></div>
+        <button class="primary" id="confirm" style="width:100%;margin-top:18px" disabled>Confirmar horário</button>
+      </div>
+      <div class="card"><h2>Meus horários</h2><div id="my-list"></div></div>
+    </div>
+  </section>
+
+  <!-- BARBEIRO -->
+  <section id="barber-view" class="hidden">
+    <div class="card">
+      <h2>Agenda do dia</h2>
+      <input type="date" id="agenda-date">
+      <div id="agenda"></div>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
